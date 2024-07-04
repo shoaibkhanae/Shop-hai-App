@@ -41,6 +41,7 @@ android {
 
 dependencies {
     val nav_version = "2.7.7"
+    val retrofit_version = "2.11.0"
 
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
@@ -51,7 +52,12 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
+    //Retrofit
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
+    // Gson converter
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
+    
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.0")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.0")
 }
