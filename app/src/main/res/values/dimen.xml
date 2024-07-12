@@ -6,4 +6,5 @@
     <dimen name="small_margin">8dp</dimen>
     <dimen name="medium_margin">16dp</dimen>
     <dimen name="splash_size">100dp</dimen>
+    <dimen name="small_padding">4dp</dimen>
 </resources>

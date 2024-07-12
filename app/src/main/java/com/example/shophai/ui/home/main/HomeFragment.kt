@@ -1,16 +1,21 @@
-package com.example.shophai.fragments
+package com.example.shophai.ui.home.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.example.shophai.adapters.ProductAdapter
 import com.example.shophai.databinding.FragmentHomeBinding
+import com.example.shophai.ui.viewmodel.MainViewModel
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding
         get() = _binding!!
+
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,7 +30,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        viewModel.products.observe(viewLifecycleOwner) {
+            val adapter = ProductAdapter(it)
+            binding.recyclerview.adapter = adapter
+        }
     }
 
     override fun onDestroy() {

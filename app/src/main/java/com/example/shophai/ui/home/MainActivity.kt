@@ -1,7 +1,8 @@
-package com.example.shophai
+package com.example.shophai.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.shophai.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
