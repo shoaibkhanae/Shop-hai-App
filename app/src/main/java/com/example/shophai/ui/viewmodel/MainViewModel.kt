@@ -1,16 +1,19 @@
 package com.example.shophai.ui.viewmodel
 
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.shophai.data.api.ShopApi
-import com.example.shophai.data.model.products
+import com.example.shophai.data.api.RetrofitBuilder
+import com.example.shophai.data.api.ShopApiService
+import com.example.shophai.data.model.Products
 import kotlinx.coroutines.launch
 
 class MainViewModel: ViewModel() {
-    private val _products = MutableLiveData<products>()
-    val products: LiveData<products> = _products
+    private val _products = MutableLiveData<Products>()
+    val products: LiveData<Products> = _products
 
     init {
         getProducts()
@@ -18,8 +21,15 @@ class MainViewModel: ViewModel() {
 
     private fun getProducts() {
         viewModelScope.launch {
-            val results = ShopApi.retrofitService.getAllProducts()
-            _products.value = results.body()
+            val api = RetrofitBuilder.getInstance().create(ShopApiService::class.java)
+            try {
+                val result = api.getProducts()
+                if (result.body() != null) {
+                    _products.postValue(result.body())
+                }
+            } catch (e: Exception) {
+                Log.d("Response","$e")
+            }
         }
     }
 }

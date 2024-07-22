@@ -7,4 +7,6 @@
     <dimen name="medium_margin">16dp</dimen>
     <dimen name="splash_size">100dp</dimen>
     <dimen name="small_padding">4dp</dimen>
+    <dimen name="star_margin">20dp</dimen>
+    <dimen name="card_elevation">1dp</dimen>
 </resources>

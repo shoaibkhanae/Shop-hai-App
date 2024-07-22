@@ -2,14 +2,14 @@ package com.example.shophai.ui.splash
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.WindowInsets
 import android.view.WindowManager
-import com.example.shophai.ui.home.MainActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.shophai.databinding.ActivitySplashBinding
+import com.example.shophai.ui.home.MainActivity
 
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
@@ -29,6 +29,15 @@ class SplashActivity : AppCompatActivity() {
         goToNextScreen()
     }
 
+    private fun createSplashFullScreen() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        }
+    }
+
     private fun goToNextScreen() {
         Handler(Looper.getMainLooper()).postDelayed({
             goToHomeScreen()
@@ -39,14 +48,5 @@ class SplashActivity : AppCompatActivity() {
     private fun goToHomeScreen() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-    }
-
-    private fun createSplashFullScreen() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        }
     }
 }

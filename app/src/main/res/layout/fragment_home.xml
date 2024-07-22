@@ -101,6 +101,7 @@
             android:id="@+id/category_chips"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:singleSelection="true"
             android:layout_marginTop="@dimen/small_margin"
             android:layout_marginStart="@dimen/basic_margin"
             app:checkedChip="@id/all_chip"
@@ -111,7 +112,6 @@
                 android:id="@+id/all_chip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:chipBackgroundColor="@color/green"
                 android:text="@string/all"/>
 
             <com.google.android.material.chip.Chip

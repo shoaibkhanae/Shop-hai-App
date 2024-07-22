@@ -1,6 +1,6 @@
 package com.example.shophai.data.model
 
-data class productsItem(
+data class ProductsItem(
     val category: String,
     val description: String,
     val id: Int,
