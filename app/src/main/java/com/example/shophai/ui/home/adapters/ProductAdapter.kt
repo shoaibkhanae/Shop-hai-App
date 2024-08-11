@@ -8,7 +8,7 @@ import coil.load
 import com.example.shophai.data.model.ProductsItem
 import com.example.shophai.databinding.GridListItemBinding
 
-class ProductAdapter(private val dataset: ArrayList<ProductsItem>)
+class ProductAdapter(private val dataset: List<ProductsItem>)
     : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     class ProductViewHolder(private val binding: GridListItemBinding) : RecyclerView.ViewHolder(binding.root) {

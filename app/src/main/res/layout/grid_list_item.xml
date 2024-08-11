@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/medium_margin"
-        app:cardElevation="@dimen/card_elevation"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="@dimen/basic_margin"
         app:cardBackgroundColor="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -77,6 +78,7 @@
                 android:id="@+id/product_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="10sp"
                 android:text="@{String.valueOf(productItem.rating.rate)}"
                 app:layout_constraintTop_toBottomOf="@id/txt_price"
                 app:layout_constraintStart_toEndOf="@id/star_image"
@@ -87,6 +89,7 @@
                 android:id="@+id/product_reviews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="10sp"
                 android:text="@{String.valueOf(productItem.rating.count)}"
                 app:layout_constraintTop_toBottomOf="@id/product_price"
                 app:layout_constraintStart_toEndOf="@id/product_rating"
@@ -94,11 +97,13 @@
                 android:layout_marginStart="@dimen/basic_margin"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/reviews"
+                android:textSize="10sp"
                 app:layout_constraintTop_toBottomOf="@id/product_price"
                 app:layout_constraintStart_toEndOf="@id/product_reviews"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/small_margin"
                 android:layout_marginStart="@dimen/small_padding"/>
                 

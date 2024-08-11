@@ -7,9 +7,10 @@
     <string name="hi_john">Hi %s</string>
     <string name="all">All</string>
     <string name="electronics">electronics</string>
-    <string name="jewellery">jewellery</string>
-    <string name="men_s_clothing">men\'s clothing</string>
+    <string name="jewellery">jewelery</string>
     <string name="d_reviews">%d Reviews</string>
     <string name="reviews">Reviews</string>
     <string name="usd">USD</string>
+    <string name="women_s_clothing">women\'s clothing</string>
+    <string name="men_s_clothing">men\'s clothing</string>
 </resources>

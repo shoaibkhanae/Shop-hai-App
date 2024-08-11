@@ -92,19 +92,21 @@
 
     <HorizontalScrollView
         android:id="@+id/horizontal_scroll"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/description_tex"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/category_chips"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:singleSelection="true"
             android:layout_marginTop="@dimen/small_margin"
             android:layout_marginStart="@dimen/basic_margin"
-            app:checkedChip="@id/all_chip"
+            android:layout_marginEnd="@dimen/basic_margin"
             app:singleLine="true" >
 
 
@@ -112,32 +114,56 @@
                 android:id="@+id/all_chip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:checkable="true"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/bg_color_state_list"
                 android:text="@string/all"/>
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/electronics"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:checkable="true"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/bg_color_state_list"
+                android:focusable="true"
                 android:text="@string/electronics"/>
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/jewelery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:checkable="true"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/bg_color_state_list"
+                android:focusable="true"
                 android:text="@string/jewellery"/>
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/mens_clothing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/men_s_clothing"/>
+                android:clickable="true"
+                android:checkable="true"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/bg_color_state_list"
+                android:text="@string/men_s_clothing"
+                android:focusable="true" />
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/womens_clothing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="electronics"/>
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="electronics"/>
+                android:clickable="true"
+                android:checkable="true"
+                app:checkedIconEnabled="false"
+                app:chipBackgroundColor="@color/bg_color_state_list"
+                android:focusable="true"
+                android:layout_marginEnd="@dimen/other_margin"
+                android:text="@string/women_s_clothing"/>
 
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
@@ -147,12 +173,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontal_scroll"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
+        app:layout_constraintVertical_bias="0.0"
+        app:spanCount="2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
