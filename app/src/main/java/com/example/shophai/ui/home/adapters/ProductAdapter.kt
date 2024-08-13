@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.shophai.R
 import com.example.shophai.data.model.ProductsItem
 import com.example.shophai.databinding.GridListItemBinding
 
@@ -27,6 +28,9 @@ class ProductAdapter(private val dataset: List<ProductsItem>)
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val current = dataset[position]
         holder.bind(current)
-        holder.productImage.load(current.image)
+        holder.productImage.load(current.image) {
+            crossfade(true)
+            placeholder(R.drawable.placeholder)
+        }
     }
 }
