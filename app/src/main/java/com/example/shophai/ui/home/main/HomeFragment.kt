@@ -51,7 +51,7 @@ class HomeFragment : Fragment() {
                     binding.progressBar.visibility = View.GONE
                     binding.recyclerview.visibility = View.VISIBLE
 
-                    it?.data?.let { products -> setupAdapter(products) }
+                    it.data?.let { products -> setupAdapter(products) }
                 }
                 is Response.Error -> {
                     binding.progressBar.visibility = View.GONE

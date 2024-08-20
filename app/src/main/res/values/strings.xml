@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="shopit">ShopIT</string>
     <string name="shophai">ShopHai</string>
-    <string name="hi_john">Hi %s</string>
+    <string name="hi_john">Hi John</string>
     <string name="all">All</string>
     <string name="electronics">electronics</string>
     <string name="jewellery">jewelery</string>
@@ -13,4 +13,10 @@
     <string name="usd">USD</string>
     <string name="women_s_clothing">women\'s clothing</string>
     <string name="men_s_clothing">men\'s clothing</string>
+    <string name="shop_from_our_stores_with_ease">Shop from our stores with ease</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="didn_t_have_any_account_sign_up_here">Didn\'t have any account? Sign up here</string>
 </resources>

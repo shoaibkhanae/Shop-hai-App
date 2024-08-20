@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serial
 
 data class Rating(
-    @field:SerializedName("count")
+    @SerializedName("count")
     val count: Int,
-    @field:SerializedName("rate")
+    @SerializedName("rate")
     val rate: Double
 )

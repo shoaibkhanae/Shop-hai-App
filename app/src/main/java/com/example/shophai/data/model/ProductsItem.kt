@@ -13,7 +13,7 @@ data class ProductsItem(
     val image: String,
     @SerializedName("price")
     val price: Double,
-    @SerializedName("Ratting")
+    @SerializedName("rating")
     val rating: Rating,
     @SerializedName("title")
     val title: String

@@ -42,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/shophai"
                 android:textStyle="bold"
+                android:fontFamily="@font/open_sans_medium"
                 app:layout_constraintTop_toTopOf="@id/app_logo"
                 app:layout_constraintStart_toEndOf="@id/app_logo"
                 android:textAppearance="?attr/textAppearanceBody2"/>
@@ -74,6 +75,7 @@
         android:layout_height="wrap_content"
         android:text="@string/hi_john"
         tools:text="HI John"
+        android:fontFamily="@font/opens_sans_regular"
         android:textAppearance="?attr/textAppearanceBody1"
         app:layout_constraintTop_toBottomOf="@id/app_bar"
         app:layout_goneMarginStart="@dimen/basic_margin"
@@ -85,6 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="What are you looking for              today?"
+        android:fontFamily="@font/open_sans_bold"
         android:textAppearance="?attr/textAppearanceHeadline5"
         android:layout_marginStart="@dimen/basic_margin"
         app:layout_constraintTop_toBottomOf="@id/greeting_name"
@@ -119,7 +122,8 @@
                 android:checkable="true"
                 app:checkedIconEnabled="false"
                 app:chipBackgroundColor="@color/bg_color_state_list"
-                android:text="@string/all"/>
+                android:text="@string/all"
+                android:fontFamily="@font/opens_sans"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/electronics"
@@ -130,7 +134,8 @@
                 app:checkedIconEnabled="false"
                 app:chipBackgroundColor="@color/bg_color_state_list"
                 android:focusable="true"
-                android:text="@string/electronics"/>
+                android:text="@string/electronics"
+                android:fontFamily="@font/opens_sans"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/jewelery"
@@ -141,7 +146,8 @@
                 app:checkedIconEnabled="false"
                 app:chipBackgroundColor="@color/bg_color_state_list"
                 android:focusable="true"
-                android:text="@string/jewellery"/>
+                android:text="@string/jewellery"
+                android:fontFamily="@font/opens_sans"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/mens_clothing"
@@ -152,7 +158,8 @@
                 app:checkedIconEnabled="false"
                 app:chipBackgroundColor="@color/bg_color_state_list"
                 android:text="@string/men_s_clothing"
-                android:focusable="true" />
+                android:focusable="true"
+                android:fontFamily="@font/opens_sans"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/womens_clothing"
@@ -164,7 +171,8 @@
                 app:chipBackgroundColor="@color/bg_color_state_list"
                 android:focusable="true"
                 android:layout_marginEnd="@dimen/other_margin"
-                android:text="@string/women_s_clothing"/>
+                android:text="@string/women_s_clothing"
+                android:fontFamily="@font/opens_sans"/>
 
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>

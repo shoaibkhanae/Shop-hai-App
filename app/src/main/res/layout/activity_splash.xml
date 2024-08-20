@@ -22,7 +22,9 @@
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:layout_marginTop="@dimen/basic_margin"
+        android:textColor="@color/green"
         android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/splash_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

@@ -36,8 +36,8 @@
                 android:text="@{productItem.title}"
                 android:layout_marginTop="@dimen/star_margin"
                 android:layout_marginStart="@dimen/small_padding"
+                android:fontFamily="@font/open_sans_bold"
                 android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-                android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/product_image"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/usd"
-                android:textStyle="bold"
+                android:fontFamily="@font/open_sans_bold"
                 android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
                 android:layout_marginTop="@dimen/small_margin"
                 app:layout_constraintTop_toBottomOf="@id/product_name"
@@ -61,7 +61,7 @@
                 app:layout_constraintTop_toTopOf="@id/txt_price"
                 app:layout_constraintStart_toEndOf="@id/txt_price"
                 android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-                android:textStyle="bold"
+                android:fontFamily="@font/open_sans_bold"
                 android:layout_marginStart="@dimen/small_margin"/>
             
             <ImageView
@@ -69,10 +69,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_star"
-                app:layout_constraintTop_toBottomOf="@id/txt_price"
+                app:layout_constraintTop_toTopOf="@id/product_reviews"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="@dimen/small_padding"
-                android:layout_marginTop="@dimen/basic_margin"/>
+                android:layout_marginStart="@dimen/small_padding" />
 
             <TextView
                 android:id="@+id/product_rating"
@@ -90,6 +89,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="10sp"
+                android:fontFamily="@font/opens_sans_regular"
+                android:textColor="@color/black"
                 android:text="@{String.valueOf(productItem.rating.count)}"
                 app:layout_constraintTop_toBottomOf="@id/product_price"
                 app:layout_constraintStart_toEndOf="@id/product_rating"
@@ -101,6 +102,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/reviews"
                 android:textSize="10sp"
+                android:fontFamily="@font/opens_sans_regular"
+                android:textColor="@color/black"
                 app:layout_constraintTop_toBottomOf="@id/product_price"
                 app:layout_constraintStart_toEndOf="@id/product_reviews"
                 app:layout_constraintEnd_toEndOf="parent"
