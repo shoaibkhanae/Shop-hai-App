@@ -28,6 +28,7 @@ class ProductAdapter(private val dataset: List<ProductsItem>)
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val current = dataset[position]
         holder.bind(current)
+
         holder.productImage.load(current.image) {
             crossfade(true)
             placeholder(R.drawable.placeholder)

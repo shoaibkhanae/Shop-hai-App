@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shophai.databinding.ActivitySplashBinding
+import com.example.shophai.ui.auth.AuthActivity
 import com.example.shophai.ui.home.MainActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -27,9 +28,14 @@ class SplashActivity : AppCompatActivity() {
 
     private fun goToNextScreen() {
         Handler(Looper.getMainLooper()).postDelayed({
-            goToHomeScreen()
+            goToLoginScreen()
             finish()
         },3000)
+    }
+
+    private fun goToLoginScreen() {
+        val intent = Intent(this, AuthActivity::class.java)
+        startActivity(intent)
     }
 
     private fun goToHomeScreen() {
