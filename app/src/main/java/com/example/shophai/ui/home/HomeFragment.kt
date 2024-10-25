@@ -1,4 +1,4 @@
-package com.example.shophai.ui.home.main
+package com.example.shophai.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,6 +23,8 @@ class HomeFragment : Fragment() {
     private val shareViewModel: MainViewModel by activityViewModels {
         MainViewModelFactory((requireActivity().application as MyApplication).repository)
     }
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

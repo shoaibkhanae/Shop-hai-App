@@ -23,10 +23,6 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun splashScreenLogic() {
-        goToNextScreen()
-    }
-
-    private fun goToNextScreen() {
         Handler(Looper.getMainLooper()).postDelayed({
             goToLoginScreen()
             finish()
