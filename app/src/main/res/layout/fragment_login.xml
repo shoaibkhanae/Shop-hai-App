@@ -87,12 +87,13 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_lock"
             android:singleLine="true"
+            android:inputType="textPassword"
             android:drawablePadding="@dimen/medium_margin"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <TextView
-        android:id="@+id/txt_forgot"
+        android:id="@+id/tv_forgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/forgot_password"
@@ -110,7 +111,7 @@
         android:fontFamily="@font/opens_sans_regular"
         android:textAllCaps="false"
         android:layout_marginTop="@dimen/basic_margin"
-        app:layout_constraintTop_toBottomOf="@id/txt_forgot"
+        app:layout_constraintTop_toBottomOf="@id/tv_forgot"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

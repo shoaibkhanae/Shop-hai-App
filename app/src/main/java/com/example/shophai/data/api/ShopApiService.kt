@@ -1,8 +1,11 @@
 package com.example.shophai.data.api
 
+import com.example.shophai.data.model.LoginResponse
 import com.example.shophai.data.model.Products
+import com.example.shophai.data.model.User
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ShopApiService {
@@ -11,4 +14,7 @@ interface ShopApiService {
 
     @GET("products/category/{category}")
     suspend fun getCategoryProducts(@Path(value = "category") category: String): Response<Products>
+
+    @POST("auth/login")
+    suspend fun login(user: User): Response<LoginResponse>
 }
