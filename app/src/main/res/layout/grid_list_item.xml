@@ -5,7 +5,7 @@
     <data>
         <variable
             name="productItem"
-            type="com.example.shophai.data.model.ProductsItem" />
+            type="com.example.shophai.data.model.products.ProductsItem" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

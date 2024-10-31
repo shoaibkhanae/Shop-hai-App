@@ -24,7 +24,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun splashScreenLogic() {
         Handler(Looper.getMainLooper()).postDelayed({
-            goToHomeScreen()
+            goToLoginScreen()
             finish()
         },3000)
     }

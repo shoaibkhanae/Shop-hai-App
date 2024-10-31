@@ -1,10 +1,9 @@
 package com.example.shophai.data.repository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.shophai.data.api.ShopApiService
-import com.example.shophai.data.model.Products
+import com.example.shophai.data.model.products.Products
 import com.example.shophai.utils.Response
 
 class ProductRepository(private val apiService: ShopApiService) {

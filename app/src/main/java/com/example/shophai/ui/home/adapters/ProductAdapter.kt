@@ -6,7 +6,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.shophai.R
-import com.example.shophai.data.model.ProductsItem
+import com.example.shophai.data.model.products.ProductsItem
 import com.example.shophai.databinding.GridListItemBinding
 
 class ProductAdapter(private val dataset: List<ProductsItem>)

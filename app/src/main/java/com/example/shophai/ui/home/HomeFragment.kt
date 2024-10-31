@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.shophai.MyApplication
-import com.example.shophai.data.model.Products
+import com.example.shophai.data.model.products.Products
 import com.example.shophai.databinding.FragmentHomeBinding
 import com.example.shophai.ui.home.adapters.ProductAdapter
 import com.example.shophai.ui.viewmodel.MainViewModel

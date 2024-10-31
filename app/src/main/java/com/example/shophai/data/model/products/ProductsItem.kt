@@ -1,4 +1,4 @@
-package com.example.shophai.data.model
+package com.example.shophai.data.model.products
 
 import com.google.gson.annotations.SerializedName
 
