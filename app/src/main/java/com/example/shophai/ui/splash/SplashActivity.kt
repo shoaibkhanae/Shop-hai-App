@@ -5,16 +5,18 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.example.shophai.databinding.ActivitySplashBinding
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.shophai.R
 import com.example.shophai.ui.auth.AuthActivity
 import com.example.shophai.ui.home.MainActivity
+import com.example.shophai.utils.SessionManager
 
 class SplashActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySplashBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val splashScreen = installSplashScreen()
+        setContentView(R.layout.activity_splash)
+        splashScreen.setKeepOnScreenCondition{ true }
         init()
     }
 
@@ -24,9 +26,17 @@ class SplashActivity : AppCompatActivity() {
 
     private fun splashScreenLogic() {
         Handler(Looper.getMainLooper()).postDelayed({
-            goToLoginScreen()
+            if (getAuthToken() != null) {
+                goToHomeScreen()
+            } else {
+                goToLoginScreen()
+            }
             finish()
         },3000)
+    }
+
+    private fun getAuthToken(): String? {
+        return SessionManager.getToken(this)
     }
 
     private fun goToLoginScreen() {

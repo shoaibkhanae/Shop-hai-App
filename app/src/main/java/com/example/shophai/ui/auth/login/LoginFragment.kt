@@ -1,6 +1,7 @@
 package com.example.shophai.ui.auth.login
 
 import android.os.Bundle
+import android.se.omapi.Session
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ import com.example.shophai.ui.auth.validator.PasswordValidator
 import com.example.shophai.ui.auth.validator.base.BaseValidator
 import com.example.shophai.ui.home.MainActivity
 import com.example.shophai.utils.Response
+import com.example.shophai.utils.SessionManager
 
 class LoginFragment : Fragment() {
     private var _binidng: FragmentLoginBinding? = null
@@ -62,19 +64,34 @@ class LoginFragment : Fragment() {
         loginViewModel.loginResult.observe(viewLifecycleOwner) {
             when(it) {
                 is Response.Loading -> {
-
+                    showProgressbar()
                 }
                 is Response.Success -> {
-                    if (it?.data?.token != null) {
-                        Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
+                    stopProgressbar()
+                    val token  = it?.data?.token
+                    if (token != null) {
+                        saveAuthToken(token)
+                        showToast("Login Successfully")
                         goToHomeScreen()
                     }
                 }
                 is Response.Error -> {
-                    Toast.makeText(requireContext(), "${it.error}", Toast.LENGTH_SHORT).show()
+                    showToast(it.error.toString())
                 }
             }
         }
+    }
+
+    private fun saveAuthToken(token: String) {
+        SessionManager.saveAuthToken(requireContext(), token)
+    }
+
+    private fun showProgressbar() {
+        binding.progressBar.visibility = View.VISIBLE
+    }
+
+    private fun stopProgressbar() {
+        binding.progressBar.visibility = View.GONE
     }
 
     private fun goToHomeScreen() {
@@ -82,6 +99,9 @@ class LoginFragment : Fragment() {
         requireActivity().finish()
     }
 
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    }
 
     private fun validateUsername() {
         loginViewModel.username = binding.etUsername.text.toString()
