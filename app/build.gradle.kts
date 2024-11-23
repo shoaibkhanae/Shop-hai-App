@@ -58,6 +58,8 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
     // Gson converter
     implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
+    // Logging Interceptor
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     // coil
     implementation("io.coil-kt:coil:2.6.0")
     // ViewModel
