@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import coil.load
 import com.example.shophai.MyApplication
+import com.example.shophai.R
 import com.example.shophai.databinding.FragmentProductBinding
 import com.example.shophai.ui.viewmodel.MainViewModel
 import com.example.shophai.ui.viewmodel.MainViewModelFactory
@@ -37,6 +39,14 @@ class ProductFragment : Fragment() {
     }
 
     private fun init() {
+        showProductDetails()
+        binding.apply {
+            btnBack.setOnClickListener { goToHomeFragment() }
+            btnCart.setOnClickListener { goToCartFragment() }
+        }
+    }
+
+    private fun showProductDetails() {
         shareViewModel.selected.observe(viewLifecycleOwner) { product ->
             binding.apply {
                 ivProduct.load(product.image)
@@ -47,6 +57,14 @@ class ProductFragment : Fragment() {
                 tvProductDescription.text = product.description
             }
         }
+    }
+
+    private fun goToHomeFragment() {
+        findNavController().navigate(R.id.action_productFragment_to_homeFragment)
+    }
+
+    private fun goToCartFragment() {
+        findNavController().navigate(R.id.action_productFragment_to_cartFragment)
     }
 
     override fun onDestroyView() {

@@ -12,7 +12,6 @@ import com.example.shophai.MyApplication
 import com.example.shophai.R
 import com.example.shophai.data.model.products.Products
 import com.example.shophai.databinding.FragmentHomeBinding
-import com.example.shophai.ui.home.adapters.ProductAdapter
 import com.example.shophai.ui.viewmodel.MainViewModel
 import com.example.shophai.ui.viewmodel.MainViewModelFactory
 import com.example.shophai.utils.Response
