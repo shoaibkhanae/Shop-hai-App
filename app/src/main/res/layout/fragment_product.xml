@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.details.ProductFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_left"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/btn_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_shopping_cart"
+                android:layout_marginEnd="@dimen/medium_margin"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <ImageView
+        android:id="@+id/iv_product"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/avater"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USD 55.99"
+        android:textSize="18sp"
+        android:textColor="@color/green"
+        android:fontFamily="@font/open_sans_bold"
+        android:layout_marginTop="@dimen/basic_margin"
+        android:layout_marginStart="@dimen/medium_margin"
+        app:layout_constraintTop_toBottomOf="@id/iv_product"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/btn_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_not_favorite"
+        android:layout_marginEnd="@dimen/medium_margin"
+        app:layout_constraintTop_toTopOf="@id/tv_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Men's Cotton Jacket"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/open_sans_bold"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginStart="@dimen/medium_margin"
+        app:layout_constraintTop_toBottomOf="@id/tv_price"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_star"
+        android:layout_width="@dimen/other_margin"
+        android:layout_height="@dimen/other_margin"
+        android:src="@drawable/ic_star"
+        android:layout_marginTop="@dimen/small_padding"
+        app:layout_constraintTop_toBottomOf="@id/tv_product_name"
+        app:layout_constraintStart_toStartOf="@id/tv_product_name"/>
+
+    <TextView
+        android:id="@+id/tv_ratting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.7"
+        android:fontFamily="@font/opens_sans"
+        android:layout_marginStart="@dimen/small_padding"
+        app:layout_constraintTop_toTopOf="@id/iv_star"
+        app:layout_constraintStart_toEndOf="@id/iv_star"
+        app:layout_constraintBottom_toBottomOf="@id/iv_star"/>
+
+    <TextView
+        android:id="@+id/tv_reviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="500"
+        android:fontFamily="@font/opens_sans"
+        android:layout_marginStart="@dimen/other_margin"
+        app:layout_constraintTop_toTopOf="@id/tv_ratting"
+        app:layout_constraintStart_toEndOf="@id/tv_ratting"/>
+
+    <TextView
+        android:id="@+id/tv_reviews_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reviews"
+        android:fontFamily="@font/opens_sans"
+        android:layout_marginStart="@dimen/small_padding"
+        app:layout_constraintTop_toTopOf="@id/tv_reviews"
+        app:layout_constraintStart_toEndOf="@id/tv_reviews"/>
+
+    <TextView
+        android:id="@+id/tv_product_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Lorem Ipsum has evolved as a filler text for prototyping in the English language. As it is written in a Latin looking language that has no meaning, it does not distract from analysing the layout of the page. While Lorem Ipsum is a useful tool for designers, it may not be sufficient when building software applications."
+        android:fontFamily="@font/opens_sans_regular"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/basic_margin"
+        app:layout_constraintTop_toBottomOf="@id/iv_star"
+        app:layout_constraintStart_toStartOf="@id/iv_star"
+        app:layout_constraintEnd_toEndOf="@id/btn_favorite" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="@string/add_to_cart"
+        android:layout_marginBottom="@dimen/other_margin"
+        app:layout_constraintStart_toStartOf="@id/tv_product_description"
+        app:layout_constraintEnd_toEndOf="@id/tv_product_description"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
