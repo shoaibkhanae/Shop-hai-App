@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.shophai.MyApplication
+import com.example.shophai.R
 import com.example.shophai.data.model.products.Products
 import com.example.shophai.databinding.FragmentHomeBinding
 import com.example.shophai.ui.home.adapters.ProductAdapter
@@ -72,6 +74,18 @@ class HomeFragment : Fragment() {
     private fun setupAdapter(products: Products) {
         val adapter = ProductAdapter(products)
         binding.recyclerview.adapter = adapter
+
+        adapter.setOnItemClickListener(object : ProductAdapter.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                val current = products[position]
+                shareViewModel.select(current)
+                goToDetailScreen()
+            }
+        })
+    }
+
+    private fun goToDetailScreen() {
+        findNavController().navigate(R.id.action_homeFragment_to_productFragment)
     }
 
     private fun getCategoryProduct() {

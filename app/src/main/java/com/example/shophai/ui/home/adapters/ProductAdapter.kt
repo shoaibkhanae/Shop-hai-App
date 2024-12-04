@@ -24,7 +24,18 @@ class ProductAdapter(private val dataset: List<ProductsItem>)
         return ProductViewHolder(binding)
     }
 
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
+    private var onItemClickListener: OnItemClickListener? = null
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.onItemClickListener = listener
+    }
+
     override fun getItemCount(): Int = dataset.size
+
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val current = dataset[position]
         holder.bind(current)
@@ -32,6 +43,10 @@ class ProductAdapter(private val dataset: List<ProductsItem>)
         holder.productImage.load(current.image) {
             crossfade(true)
             placeholder(R.drawable.placeholder)
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClickListener?.onItemClick(position)
         }
     }
 }
