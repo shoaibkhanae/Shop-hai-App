@@ -45,6 +45,7 @@ class HomeFragment : Fragment() {
     private fun init() {
         getCategoryProduct()
         setupUIWithCategory()
+        binding.avatarImage.setOnClickListener { goToProfileScreen() }
     }
 
     private fun setupUIWithCategory() {
@@ -85,6 +86,10 @@ class HomeFragment : Fragment() {
 
     private fun goToDetailScreen() {
         findNavController().navigate(R.id.action_homeFragment_to_productFragment)
+    }
+
+    private fun goToProfileScreen() {
+        findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
     }
 
     private fun getCategoryProduct() {

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/medium_margin"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.HomeFragment">
 
@@ -17,7 +18,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/avatar_image"
@@ -55,7 +56,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/basic_margin"
-                android:layout_marginEnd="@dimen/small_margin"/>
+                android:layout_marginEnd="@dimen/medium_margin"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -78,8 +79,6 @@
         android:fontFamily="@font/opens_sans_regular"
         android:textAppearance="?attr/textAppearanceBody1"
         app:layout_constraintTop_toBottomOf="@id/app_bar"
-        app:layout_goneMarginStart="@dimen/basic_margin"
-        android:layout_marginStart="@dimen/basic_margin"
         app:layout_constraintStart_toStartOf="parent"/>
     
     <TextView
@@ -89,7 +88,6 @@
         android:text="What are you looking for              today?"
         android:fontFamily="@font/open_sans_bold"
         android:textAppearance="?attr/textAppearanceHeadline5"
-        android:layout_marginStart="@dimen/basic_margin"
         app:layout_constraintTop_toBottomOf="@id/greeting_name"
         app:layout_constraintStart_toStartOf="@id/greeting_name"/>
 
@@ -108,8 +106,6 @@
             android:layout_height="wrap_content"
             app:singleSelection="true"
             android:layout_marginTop="@dimen/small_margin"
-            android:layout_marginStart="@dimen/basic_margin"
-            android:layout_marginEnd="@dimen/basic_margin"
             app:checkedChip="@id/all_chip"
             app:singleLine="true" >
 
@@ -182,7 +178,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        android:layout_margin="@dimen/medium_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

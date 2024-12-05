@@ -1,5 +1,6 @@
 package com.example.shophai.ui.auth.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.se.omapi.Session
 import android.util.Log
@@ -76,6 +77,7 @@ class LoginFragment : Fragment() {
                     }
                 }
                 is Response.Error -> {
+                    stopProgressbar()
                     showToast(it.error.toString())
                 }
             }
@@ -95,7 +97,8 @@ class LoginFragment : Fragment() {
     }
 
     private fun goToHomeScreen() {
-        startActivity(MainActivity.getCallingIntent(requireContext()))
+        val intent = Intent(requireContext(), MainActivity::class.java)
+        startActivity(intent)
         requireActivity().finish()
     }
 
