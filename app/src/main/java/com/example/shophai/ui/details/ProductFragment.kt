@@ -11,7 +11,7 @@ import coil.load
 import com.example.shophai.MyApplication
 import com.example.shophai.R
 import com.example.shophai.databinding.FragmentProductBinding
-import com.example.shophai.ui.viewmodel.MainViewModel
+import com.example.shophai.ui.viewmodel.HomeViewModel
 import com.example.shophai.ui.viewmodel.MainViewModelFactory
 
 
@@ -20,7 +20,7 @@ class ProductFragment : Fragment() {
     val binding
         get() = _binding!!
 
-    private val shareViewModel: MainViewModel by activityViewModels {
+    private val shareViewModel: HomeViewModel by activityViewModels {
         MainViewModelFactory((requireActivity().application as MyApplication).repository)
     }
 

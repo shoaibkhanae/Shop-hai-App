@@ -12,7 +12,7 @@ import com.example.shophai.MyApplication
 import com.example.shophai.R
 import com.example.shophai.data.model.products.Products
 import com.example.shophai.databinding.FragmentHomeBinding
-import com.example.shophai.ui.viewmodel.MainViewModel
+import com.example.shophai.ui.viewmodel.HomeViewModel
 import com.example.shophai.ui.viewmodel.MainViewModelFactory
 import com.example.shophai.utils.Response
 
@@ -21,7 +21,7 @@ class HomeFragment : Fragment() {
     private val binding
         get() = _binding!!
 
-    private val shareViewModel: MainViewModel by activityViewModels {
+    private val shareViewModel: HomeViewModel by activityViewModels {
         MainViewModelFactory((requireActivity().application as MyApplication).repository)
     }
 

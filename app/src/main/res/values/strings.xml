@@ -37,4 +37,6 @@
     <string name="personal">Personal</string>
     <string name="report_a_bug">Report a bug</string>
     <string name="logout">Logout</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="proceed_to_checkout">Proceed to checkout</string>
 </resources>

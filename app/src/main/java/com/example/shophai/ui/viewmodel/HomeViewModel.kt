@@ -10,7 +10,7 @@ import com.example.shophai.data.repository.ProductRepository
 import com.example.shophai.utils.Response
 import kotlinx.coroutines.launch
 
-class MainViewModel(private val repository: ProductRepository): ViewModel() {
+class HomeViewModel(private val repository: ProductRepository): ViewModel() {
     private val _selected = MutableLiveData<ProductsItem>()
     val selected: LiveData<ProductsItem> = _selected
 
