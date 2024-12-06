@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="1dp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_margin="@dimen/basic_margin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/medium_margin">
+
+        <ImageView
+            android:id="@+id/iv_product"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src=""
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Men's Casual premium slim Fit T-shirt"
+            android:textSize="18sp"
+            android:fontFamily="@font/open_sans_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_product"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USD 22.3"
+            android:textSize="16sp"
+            android:fontFamily="@font/open_sans_bold"
+            android:layout_marginTop="@dimen/small_margin"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintStart_toStartOf="@id/tv_name"/>
+
+        <ImageView
+            android:id="@+id/star_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star"
+            android:layout_marginTop="@dimen/basic_margin"
+            app:layout_constraintTop_toBottomOf="@id/tv_price"
+            app:layout_constraintStart_toStartOf="@id/tv_price" />
+
+        <TextView
+            android:id="@+id/product_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="4.7"
+            android:layout_marginStart="@dimen/small_padding"
+            app:layout_constraintTop_toTopOf="@id/star_image"
+            app:layout_constraintStart_toEndOf="@id/star_image"
+            app:layout_constraintBottom_toBottomOf="@id/star_image"/>
+
+        <TextView
+            android:id="@+id/product_reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="400"
+            android:textSize="10sp"
+            android:fontFamily="@font/opens_sans_regular"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/basic_margin"
+            app:layout_constraintTop_toTopOf="@id/product_rating"
+            app:layout_constraintStart_toEndOf="@id/product_rating"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/reviews"
+            android:textSize="10sp"
+            android:fontFamily="@font/opens_sans_regular"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="@id/product_reviews"
+            app:layout_constraintStart_toEndOf="@id/product_reviews"
+            android:layout_marginStart="@dimen/small_padding"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
