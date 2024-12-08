@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/medium_margin"
+    android:paddingVertical="@dimen/other_margin"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.cart.CartFragment">
@@ -41,6 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginHorizontal="@dimen/medium_margin"
         app:layout_constraintTop_toBottomOf="@id/app_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +53,7 @@
         android:layout_height="56dp"
         android:text="@string/proceed_to_checkout"
         android:layout_marginBottom="@dimen/basic_margin"
+        android:layout_marginHorizontal="@dimen/medium_margin"
         android:fontFamily="@font/open_sans_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,6 +65,7 @@
         android:layout_height="wrap_content"
         android:text="Total 2 items"
         android:fontFamily="@font/open_sans_medium"
+        android:layout_marginStart="@dimen/medium_margin"
         app:layout_constraintBottom_toTopOf="@id/btn_proceed_payment"
         app:layout_constraintStart_toStartOf="parent"
         android:paddingBottom="@dimen/basic_margin"/>
@@ -73,6 +76,7 @@
         android:layout_height="wrap_content"
         android:text="USD 374.45"
         android:paddingBottom="@dimen/basic_margin"
+        android:layout_marginEnd="@dimen/medium_margin"
         android:fontFamily="@font/open_sans_bold"
         app:layout_constraintBottom_toTopOf="@id/btn_proceed_payment"
         app:layout_constraintEnd_toEndOf="parent"/>

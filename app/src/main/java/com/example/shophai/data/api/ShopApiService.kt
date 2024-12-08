@@ -18,4 +18,5 @@ interface ShopApiService {
 
     @POST("auth/login")
     suspend fun loginUser(@Body loginRequest: LoginRequest): Response<LoginResponse>
+
 }

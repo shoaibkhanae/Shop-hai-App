@@ -13,6 +13,7 @@ import com.example.shophai.R
 import com.example.shophai.databinding.FragmentProductBinding
 import com.example.shophai.ui.viewmodel.HomeViewModel
 import com.example.shophai.ui.viewmodel.MainViewModelFactory
+import java.text.NumberFormat
 
 
 class ProductFragment : Fragment() {
@@ -51,9 +52,9 @@ class ProductFragment : Fragment() {
             binding.apply {
                 ivProduct.load(product.image)
                 tvProductName.text = product.title
-                tvPrice.text = product.price.toString()
+                tvPrice.text = requireContext().getString(R.string.price, product.price.toString())
                 tvRating.text = product.rating.rate.toString()
-                tvReviews.text = product.rating.count.toString()
+                tvReviews.text = requireContext().getString(R.string.d_reviews, product.rating.count)
                 tvProductDescription.text = product.description
             }
         }

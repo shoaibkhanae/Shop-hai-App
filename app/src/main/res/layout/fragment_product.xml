@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
+    android:paddingVertical="@dimen/medium_margin"
     tools:context=".ui.details.ProductFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/small_margin"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" >
@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_shopping_cart"
-                android:layout_marginEnd="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/other_margin"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -53,7 +53,7 @@
                 android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="USD 55.99"
+                android:text="@string/price"
                 android:textSize="18sp"
                 android:textColor="@color/green"
                 android:fontFamily="@font/open_sans_bold"
@@ -110,21 +110,11 @@
                 android:id="@+id/tv_reviews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="500"
+                android:text="@string/d_reviews"
                 android:fontFamily="@font/opens_sans"
                 android:layout_marginStart="@dimen/other_margin"
                 app:layout_constraintTop_toTopOf="@id/tv_rating"
                 app:layout_constraintStart_toEndOf="@id/tv_rating"/>
-
-            <TextView
-                android:id="@+id/tv_reviews_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/reviews"
-                android:fontFamily="@font/opens_sans"
-                android:layout_marginStart="@dimen/small_padding"
-                app:layout_constraintTop_toTopOf="@id/tv_reviews"
-                app:layout_constraintStart_toEndOf="@id/tv_reviews"/>
 
     <ScrollView
         android:layout_width="match_parent"

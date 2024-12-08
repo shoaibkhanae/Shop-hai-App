@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/medium_margin"
+    android:paddingVertical="@dimen/other_margin"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.HomeFragment">
 
@@ -18,7 +18,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
 
             <ImageView
                 android:id="@+id/avatar_image"
@@ -43,10 +44,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/shophai"
                 android:textStyle="bold"
-                android:fontFamily="@font/open_sans_medium"
+                android:textSize="18sp"
+                android:fontFamily="@font/open_sans_bold"
                 app:layout_constraintTop_toTopOf="@id/app_logo"
                 app:layout_constraintStart_toEndOf="@id/app_logo"
-                android:textAppearance="?attr/textAppearanceBody2"/>
+                app:layout_constraintBottom_toBottomOf="@id/app_logo"/>
 
             <ImageView
                 android:id="@+id/cart_icon"
@@ -56,7 +58,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/basic_margin"
-                android:layout_marginEnd="@dimen/medium_margin"/>
+                android:layout_marginEnd="@dimen/other_margin"/>
 
             <ImageView
                 android:id="@+id/search_icon"
@@ -77,6 +79,7 @@
         android:layout_height="wrap_content"
         android:text="@string/hi_john"
         tools:text="HI John"
+        android:layout_marginStart="@dimen/medium_margin"
         android:fontFamily="@font/opens_sans_regular"
         android:textAppearance="?attr/textAppearanceBody1"
         app:layout_constraintTop_toBottomOf="@id/app_bar"
@@ -89,6 +92,7 @@
         android:text="What are you looking for              today?"
         android:fontFamily="@font/open_sans_bold"
         android:textAppearance="?attr/textAppearanceHeadline5"
+        android:layout_marginStart="@dimen/medium_margin"
         app:layout_constraintTop_toBottomOf="@id/greeting_name"
         app:layout_constraintStart_toStartOf="@id/greeting_name"/>
 
@@ -97,6 +101,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:scrollbars="none"
+        android:layout_marginHorizontal="@dimen/medium_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/description_tex"
         app:layout_constraintStart_toStartOf="parent">
@@ -179,6 +184,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:layout_marginHorizontal="@dimen/medium_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
