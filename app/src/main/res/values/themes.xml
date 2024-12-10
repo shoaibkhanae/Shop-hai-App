@@ -11,6 +11,7 @@
         <item name="colorOnSecondary">@color/accent</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/black</item>
+        <item name="android:windowActivityTransitions">true</item>
     </style>
 
     <style name="Theme.ShopHai" parent="Base.Theme.ShopHai" />

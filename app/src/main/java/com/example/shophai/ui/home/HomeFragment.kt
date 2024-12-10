@@ -4,13 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.shophai.MyApplication
 import com.example.shophai.R
 import com.example.shophai.data.model.products.Products
+import com.example.shophai.data.model.products.ProductsItem
 import com.example.shophai.databinding.FragmentHomeBinding
 import com.example.shophai.ui.viewmodel.HomeViewModel
 import com.example.shophai.ui.viewmodel.MainViewModelFactory
@@ -24,7 +27,6 @@ class HomeFragment : Fragment() {
     private val shareViewModel: HomeViewModel by activityViewModels {
         MainViewModelFactory((requireActivity().application as MyApplication).repository)
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -79,17 +81,24 @@ class HomeFragment : Fragment() {
         val adapter = ProductAdapter(products)
         binding.recyclerview.adapter = adapter
 
-        adapter.setOnItemClickListener(object : ProductAdapter.OnItemClickListener {
-            override fun onItemClick(position: Int) {
-                val current = products[position]
-                shareViewModel.select(current)
-                goToDetailScreen()
+        adapter.productSelectedListener = object : ProductAdapter.ProductSelectedListener {
+            override fun productSelected(product: ProductsItem, imageView: ImageView) {
+                shareViewModel.select(product)
+                goToDetailScreenWithTransition(imageView, product)
             }
-        })
+        }
     }
 
-    private fun goToDetailScreen() {
-        findNavController().navigate(R.id.action_homeFragment_to_productFragment)
+    private fun goToDetailScreenWithTransition(imageView: ImageView, product: ProductsItem) {
+        val extras = FragmentNavigatorExtras(
+            imageView to product.image
+        )
+        findNavController().navigate(
+            R.id.action_homeFragment_to_productFragment,
+            null,
+            null,
+            extras
+        )
     }
 
     private fun goToProfileScreen() {

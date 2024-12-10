@@ -12,10 +12,25 @@ import com.example.shophai.databinding.GridListItemBinding
 class ProductAdapter(private val dataset: List<ProductsItem>)
     : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
-    class ProductViewHolder(private val binding: GridListItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        val productImage: ImageView = binding.productImage
+    inner class ProductViewHolder(private val binding: GridListItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        private val productImage: ImageView = binding.productImage
         fun bind(product: ProductsItem) {
-            binding.productItem = product
+            binding.apply {
+                productName.text = product.title
+                productPrice.text = product.price.toString()
+                productRating.text = product.rating.rate.toString()
+                productReviews.text = product.rating.count.toString()
+                productImage.apply {
+                    transitionName = product.image
+                    load(product.image) {
+                        crossfade(true)
+                        placeholder(R.drawable.placeholder)
+                    }
+                }
+                cdProduct.setOnClickListener {
+                    productSelectedListener.productSelected(product, productImage)
+                }
+            }
         }
     }
 
@@ -24,15 +39,11 @@ class ProductAdapter(private val dataset: List<ProductsItem>)
         return ProductViewHolder(binding)
     }
 
-    interface OnItemClickListener {
-        fun onItemClick(position: Int)
+    interface ProductSelectedListener {
+        fun productSelected(product: ProductsItem, imageView: ImageView)
     }
 
-    private var onItemClickListener: OnItemClickListener? = null
-
-    fun setOnItemClickListener(listener: OnItemClickListener) {
-        this.onItemClickListener = listener
-    }
+    lateinit var productSelectedListener : ProductSelectedListener
 
     override fun getItemCount(): Int = dataset.size
 
@@ -40,13 +51,8 @@ class ProductAdapter(private val dataset: List<ProductsItem>)
         val current = dataset[position]
         holder.bind(current)
 
-        holder.productImage.load(current.image) {
-            crossfade(true)
-            placeholder(R.drawable.placeholder)
-        }
-
-        holder.itemView.setOnClickListener {
-            onItemClickListener?.onItemClick(position)
-        }
+//        holder.itemView.setOnClickListener {
+//            onItemClickListener?.onItemClick(position)
+//        }
     }
 }

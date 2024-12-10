@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <data>
-        <variable
-            name="productItem"
-            type="com.example.shophai.data.model.products.ProductsItem" />
-    </data>
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/basic_margin"
-        app:cardCornerRadius="@dimen/basic_margin"
-        app:cardBackgroundColor="@color/white">
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cd_product"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/basic_margin"
+    app:cardCornerRadius="@dimen/basic_margin"
+    android:elevation="1dp"
+    app:cardBackgroundColor="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -24,6 +18,7 @@
                 android:id="@+id/product_image"
                 android:layout_width="@dimen/big_margin"
                 android:layout_height="@dimen/big_margin"
+                android:transitionName=""
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -32,7 +27,7 @@
                 android:id="@+id/product_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@{productItem.title}"
+                android:text=""
                 android:layout_marginTop="@dimen/star_margin"
                 android:layout_marginStart="@dimen/small_padding"
                 android:fontFamily="@font/open_sans_bold"
@@ -56,7 +51,7 @@
                 android:id="@+id/product_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{String.valueOf(productItem.price)}"
+                android:text=""
                 app:layout_constraintTop_toTopOf="@id/txt_price"
                 app:layout_constraintStart_toEndOf="@id/txt_price"
                 android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
@@ -90,7 +85,7 @@
                 android:textSize="10sp"
                 android:fontFamily="@font/opens_sans_regular"
                 android:textColor="@color/black"
-                android:text="@{String.valueOf(productItem.rating.count)}"
+                android:text=""
                 app:layout_constraintTop_toBottomOf="@id/product_price"
                 app:layout_constraintStart_toEndOf="@id/product_rating"
                 android:layout_marginTop="@dimen/small_margin"
@@ -112,4 +107,3 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
-</layout>

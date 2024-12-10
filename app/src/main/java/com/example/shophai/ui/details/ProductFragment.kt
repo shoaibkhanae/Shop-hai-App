@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.transition.TransitionInflater
 import coil.load
 import com.example.shophai.MyApplication
 import com.example.shophai.R
@@ -23,6 +24,12 @@ class ProductFragment : Fragment() {
 
     private val shareViewModel: HomeViewModel by activityViewModels {
         MainViewModelFactory((requireActivity().application as MyApplication).repository)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedElementEnterTransition = TransitionInflater.from(requireContext()).inflateTransition(android.R.transition.move)
+        sharedElementReturnTransition = TransitionInflater.from(requireContext()).inflateTransition(android.R.transition.move)
     }
 
     override fun onCreateView(
@@ -50,7 +57,10 @@ class ProductFragment : Fragment() {
     private fun showProductDetails() {
         shareViewModel.selected.observe(viewLifecycleOwner) { product ->
             binding.apply {
-                ivProduct.load(product.image)
+                ivProduct.apply {
+                    transitionName = product.image
+                    load(product.image)
+                }
                 tvProductName.text = product.title
                 tvPrice.text = requireContext().getString(R.string.price, product.price.toString())
                 tvRating.text = product.rating.rate.toString()
