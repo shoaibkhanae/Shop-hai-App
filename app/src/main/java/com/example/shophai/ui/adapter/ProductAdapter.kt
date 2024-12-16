@@ -1,4 +1,4 @@
-package com.example.shophai.adapter
+package com.example.shophai.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -7,8 +7,9 @@ import com.example.shophai.data.api.ShopApiService
 import com.example.shophai.data.api.response.login.response.LoginResponse
 import com.example.shophai.data.api.response.login.request.LoginRequest
 import com.example.shophai.utils.Response
+import javax.inject.Inject
 
-class UserRepository(val apiService: ShopApiService) {
+class UserRepository @Inject constructor(private val apiService: ShopApiService) {
     private val _loginResult = MutableLiveData<Response<LoginResponse>>()
     val loginResult: LiveData<Response<LoginResponse>> = _loginResult
 

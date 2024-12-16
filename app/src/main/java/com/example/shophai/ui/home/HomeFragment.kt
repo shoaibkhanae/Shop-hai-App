@@ -11,7 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.shophai.R
-import com.example.shophai.adapter.ProductAdapter
+import com.example.shophai.ui.adapter.ProductAdapter
 import com.example.shophai.data.api.response.products.Products
 import com.example.shophai.data.model.ProductsItem
 import com.example.shophai.databinding.FragmentHomeBinding

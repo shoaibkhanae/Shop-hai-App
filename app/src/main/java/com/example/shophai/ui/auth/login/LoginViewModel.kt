@@ -7,9 +7,14 @@ import com.example.shophai.data.api.response.login.request.LoginRequest
 import com.example.shophai.data.api.response.login.response.LoginResponse
 import com.example.shophai.data.repository.UserRepository
 import com.example.shophai.utils.Response
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginViewModel(private val repository: UserRepository) : ViewModel() {
+@HiltViewModel
+class LoginViewModel @Inject constructor(
+    private val repository: UserRepository
+) : ViewModel() {
 
     var username: String = ""
     var password: String = ""

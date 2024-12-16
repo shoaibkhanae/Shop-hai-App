@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.example.shophai.MyApplication
 import com.example.shophai.databinding.FragmentLoginBinding
 import com.example.shophai.ui.auth.validator.EmptyValidator
 import com.example.shophai.ui.auth.validator.PasswordValidator
@@ -16,15 +15,15 @@ import com.example.shophai.ui.auth.validator.base.BaseValidator
 import com.example.shophai.ui.home.MainActivity
 import com.example.shophai.utils.Response
 import com.example.shophai.utils.SessionManager
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private var _binidng: FragmentLoginBinding? = null
     val binding
         get() = _binidng!!
 
-    private val loginViewModel: LoginViewModel by viewModels {
-        LoginViewModelFactory((requireActivity().application as MyApplication).loginRepository)
-    }
+    private val loginViewModel: LoginViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -66,7 +65,7 @@ class LoginFragment : Fragment() {
                 }
                 is Response.Success -> {
                     stopProgressbar()
-                    val token  = it?.data?.token
+                    val token  = it.data!!.token
                     if (token != null) {
                         saveAuthToken(token)
                         showToast("Login Successfully")
