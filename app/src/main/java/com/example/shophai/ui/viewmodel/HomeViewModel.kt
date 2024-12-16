@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.shophai.data.model.products.Products
-import com.example.shophai.data.model.products.ProductsItem
+import com.example.shophai.data.api.response.products.Products
+import com.example.shophai.data.model.ProductsItem
 import com.example.shophai.data.repository.ProductRepository
 import com.example.shophai.utils.Response
 import kotlinx.coroutines.launch

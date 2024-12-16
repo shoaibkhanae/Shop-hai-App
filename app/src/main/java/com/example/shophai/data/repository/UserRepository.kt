@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.shophai.data.api.ShopApiService
-import com.example.shophai.data.model.login.response.LoginResponse
-import com.example.shophai.data.model.login.request.LoginRequest
+import com.example.shophai.data.api.response.login.response.LoginResponse
+import com.example.shophai.data.api.response.login.request.LoginRequest
 import com.example.shophai.utils.Response
 
 class UserRepository(val apiService: ShopApiService) {

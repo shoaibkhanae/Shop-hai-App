@@ -1,8 +1,8 @@
 package com.example.shophai.data.api
 
-import com.example.shophai.data.model.login.request.LoginRequest
-import com.example.shophai.data.model.login.response.LoginResponse
-import com.example.shophai.data.model.products.Products
+import com.example.shophai.data.api.response.login.request.LoginRequest
+import com.example.shophai.data.api.response.login.response.LoginResponse
+import com.example.shophai.data.api.response.products.Products
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET

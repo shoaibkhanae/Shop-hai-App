@@ -1,4 +1,4 @@
-package com.example.shophai.data.model.login.response
+package com.example.shophai.data.api.response.login.response
 
 import com.google.gson.annotations.SerializedName
 
