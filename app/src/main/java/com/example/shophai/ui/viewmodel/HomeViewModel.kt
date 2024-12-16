@@ -35,5 +35,4 @@ class HomeViewModel(private val repository: ProductRepository): ViewModel() {
             repository.getCategoryProducts(category)
         }
     }
-
 }

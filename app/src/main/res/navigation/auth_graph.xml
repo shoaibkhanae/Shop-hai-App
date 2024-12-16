@@ -6,11 +6,6 @@
     app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.example.shophai.ui.auth.signup.SignUpFragment"
-        android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
-    <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.shophai.ui.auth.login.LoginFragment"
         android:label="fragment_login"

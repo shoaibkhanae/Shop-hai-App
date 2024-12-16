@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    android:paddingVertical="@dimen/medium_margin"
     tools:context=".ui.details.ProductFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
