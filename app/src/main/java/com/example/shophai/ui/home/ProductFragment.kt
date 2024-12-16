@@ -1,4 +1,4 @@
-package com.example.shophai.ui.details
+package com.example.shophai.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,6 @@ import com.example.shophai.R
 import com.example.shophai.databinding.FragmentProductBinding
 import com.example.shophai.ui.viewmodel.HomeViewModel
 import com.example.shophai.ui.viewmodel.MainViewModelFactory
-import java.text.NumberFormat
 
 
 class ProductFragment : Fragment() {

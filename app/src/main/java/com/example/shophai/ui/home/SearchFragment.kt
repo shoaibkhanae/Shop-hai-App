@@ -1,4 +1,4 @@
-package com.example.shophai.ui.search
+package com.example.shophai.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -2,8 +2,6 @@ package com.example.shophai.ui.auth.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.se.omapi.Session
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +9,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.shophai.MyApplication
-import com.example.shophai.data.model.login.request.LoginRequest
 import com.example.shophai.databinding.FragmentLoginBinding
 import com.example.shophai.ui.auth.validator.EmptyValidator
 import com.example.shophai.ui.auth.validator.PasswordValidator

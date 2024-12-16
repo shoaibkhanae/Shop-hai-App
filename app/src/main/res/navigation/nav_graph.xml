@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/productFragment"
-        android:name="com.example.shophai.ui.details.ProductFragment"
+        android:name="com.example.shophai.ui.home.ProductFragment"
         android:label="fragment_product"
         tools:layout="@layout/fragment_product" >
         <action
@@ -41,12 +41,12 @@
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.example.shophai.ui.cart.CartFragment"
+        android:name="com.example.shophai.ui.home.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.shophai.ui.profile.ProfileFragment"
+        android:name="com.example.shophai.ui.home.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.shophai.ui.search.SearchFragment"
+        android:name="com.example.shophai.ui.home.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" >
         <action

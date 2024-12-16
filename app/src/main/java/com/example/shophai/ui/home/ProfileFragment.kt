@@ -1,4 +1,4 @@
-package com.example.shophai.ui.profile
+package com.example.shophai.ui.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +12,6 @@ import com.example.shophai.R
 import com.example.shophai.databinding.FragmentProfileBinding
 import com.example.shophai.ui.auth.AuthActivity
 import com.example.shophai.utils.SessionManager
-import kotlinx.coroutines.delay
 
 
 class ProfileFragment : Fragment() {

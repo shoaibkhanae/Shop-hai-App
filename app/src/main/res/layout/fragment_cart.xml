@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.cart.CartFragment">
+    tools:context=".ui.home.CartFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/app_bar"
