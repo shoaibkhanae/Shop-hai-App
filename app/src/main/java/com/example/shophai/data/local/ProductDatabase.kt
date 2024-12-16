@@ -6,5 +6,5 @@ import com.example.shophai.data.model.ProductsItem
 
 @Database(entities = [ProductsIte::class], version = 1, exportSchema = false)
 abstract class ProductDatabase: RoomDatabase() {
-
+    abstract fun getProductDao(): ProductDao
 }

@@ -10,14 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
-import com.example.shophai.MyApplication
 import com.example.shophai.R
 import com.example.shophai.adapter.ProductAdapter
 import com.example.shophai.data.api.response.products.Products
 import com.example.shophai.data.model.ProductsItem
 import com.example.shophai.databinding.FragmentHomeBinding
 import com.example.shophai.ui.viewmodel.HomeViewModel
-import com.example.shophai.ui.viewmodel.MainViewModelFactory
 import com.example.shophai.utils.Response
 
 class HomeFragment : Fragment() {
@@ -25,9 +23,7 @@ class HomeFragment : Fragment() {
     private val binding
         get() = _binding!!
 
-    private val shareViewModel: HomeViewModel by activityViewModels {
-        MainViewModelFactory((requireActivity().application as MyApplication).repository)
-    }
+    private val shareViewModel: HomeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

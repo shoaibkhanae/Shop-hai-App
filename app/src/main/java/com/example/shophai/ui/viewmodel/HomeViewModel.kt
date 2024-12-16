@@ -8,9 +8,15 @@ import com.example.shophai.data.api.response.products.Products
 import com.example.shophai.data.model.ProductsItem
 import com.example.shophai.data.repository.ProductRepository
 import com.example.shophai.utils.Response
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel(private val repository: ProductRepository): ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor(
+    private val repository: ProductRepository
+): ViewModel() {
+
     private val _selected = MutableLiveData<ProductsItem>()
     val selected: LiveData<ProductsItem> = _selected
 

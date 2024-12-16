@@ -9,11 +9,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.transition.TransitionInflater
 import coil.load
-import com.example.shophai.MyApplication
 import com.example.shophai.R
 import com.example.shophai.databinding.FragmentProductBinding
 import com.example.shophai.ui.viewmodel.HomeViewModel
-import com.example.shophai.ui.viewmodel.MainViewModelFactory
 
 
 class ProductFragment : Fragment() {
@@ -21,9 +19,7 @@ class ProductFragment : Fragment() {
     val binding
         get() = _binding!!
 
-    private val shareViewModel: HomeViewModel by activityViewModels {
-        MainViewModelFactory((requireActivity().application as MyApplication).repository)
-    }
+    private val shareViewModel: HomeViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

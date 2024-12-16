@@ -4,9 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.shophai.data.api.ShopApiService
 import com.example.shophai.data.api.response.products.Products
+import com.example.shophai.data.local.ProductDao
 import com.example.shophai.utils.Response
+import javax.inject.Inject
 
-class ProductRepository(private val apiService: ShopApiService) {
+class ProductRepository @Inject constructor(
+    private val apiService: ShopApiService,
+    private val productDao: ProductDao
+) {
 
     private val _products = MutableLiveData<Response<Products>>()
     val products: LiveData<Response<Products>> = _products
