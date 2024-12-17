@@ -5,18 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.shophai.R
-import com.example.shophai.ui.adapter.ProductAdapter
-import com.example.shophai.data.api.response.products.Products
 import com.example.shophai.data.model.ProductsItem
 import com.example.shophai.databinding.FragmentHomeBinding
+import com.example.shophai.ui.adapter.ProductAdapter
 import com.example.shophai.ui.viewmodel.HomeViewModel
-import com.example.shophai.utils.Response
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -42,8 +39,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun init() {
-        getCategoryProduct()
-        setupUIWithCategory()
+//        getCategoryProduct()
+//        setupUIWithCategory()
+        setupUI()
         binding.apply {
             avatarImage.setOnClickListener { goToProfileScreen() }
             searchIcon.setOnClickListener { goToSearchScreen() }
@@ -51,30 +49,37 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun setupUIWithCategory() {
-        shareViewModel.products.observe(viewLifecycleOwner) {
-            when(it) {
-                is Response.Success -> {
-                    binding.progressBar.visibility = View.GONE
-                    binding.recyclerview.visibility = View.VISIBLE
+//    private fun setupUIWithCategory() {
+//        shareViewModel.products.observe(viewLifecycleOwner) {
+//            when(it) {
+//                is Response.Success -> {
+//                    binding.progressBar.visibility = View.GONE
+//                    binding.recyclerview.visibility = View.VISIBLE
+//
+//                    it.data?.let { products -> setupAdapter(products) }
+//                }
+//                is Response.Error -> {
+//                    binding.progressBar.visibility = View.GONE
+//                    binding.recyclerview.visibility = View.GONE
+//
+//                    Toast.makeText(requireContext(), "Error ${it.error}", Toast.LENGTH_LONG).show()
+//                }
+//                is Response.Loading -> {
+//                    binding.progressBar.visibility = View.VISIBLE
+//                    binding.recyclerview.visibility = View.GONE
+//                }
+//            }
+//        }
+//    }
 
-                    it.data?.let { products -> setupAdapter(products) }
-                }
-                is Response.Error -> {
-                    binding.progressBar.visibility = View.GONE
-                    binding.recyclerview.visibility = View.GONE
-
-                    Toast.makeText(requireContext(), "Error ${it.error}", Toast.LENGTH_LONG).show()
-                }
-                is Response.Loading -> {
-                    binding.progressBar.visibility = View.VISIBLE
-                    binding.recyclerview.visibility = View.GONE
-                }
-            }
+    private fun setupUI() {
+        shareViewModel.cached.observe(viewLifecycleOwner) {
+            setupAdapter(it)
         }
     }
 
-    private fun setupAdapter(products: Products) {
+
+    private fun setupAdapter(products: List<ProductsItem>) {
         val adapter = ProductAdapter(products)
         binding.recyclerview.adapter = adapter
 
@@ -110,23 +115,23 @@ class HomeFragment : Fragment() {
         findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
     }
 
-    private fun getCategoryProduct() {
-        binding.allChip.setOnClickListener {
-            shareViewModel.getProducts()
-        }
-        binding.electronics.setOnClickListener {
-            shareViewModel.getCategoryProducts("electronics")
-        }
-        binding.jewelery.setOnClickListener {
-            shareViewModel.getCategoryProducts("jewelery")
-        }
-        binding.mensClothing.setOnClickListener {
-            shareViewModel.getCategoryProducts("men's clothing")
-        }
-        binding.womensClothing.setOnClickListener {
-            shareViewModel.getCategoryProducts("women's clothing")
-        }
-    }
+//    private fun getCategoryProduct() {
+//        binding.allChip.setOnClickListener {
+//            shareViewModel.getProducts()
+//        }
+//        binding.electronics.setOnClickListener {
+//            shareViewModel.getProductsWithCategory("electronics")
+//        }
+//        binding.jewelery.setOnClickListener {
+//            shareViewModel.getProductsWithCategory("jewelery")
+//        }
+//        binding.mensClothing.setOnClickListener {
+//            shareViewModel.getProductsWithCategory("men's clothing")
+//        }
+//        binding.womensClothing.setOnClickListener {
+//            shareViewModel.getProductsWithCategory("women's clothing")
+//        }
+//    }
 
 
     override fun onDestroyView() {

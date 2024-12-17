@@ -3,11 +3,10 @@ package com.example.shophai.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.shophai.data.api.response.products.Products
 import com.example.shophai.data.model.ProductsItem
 import com.example.shophai.data.repository.ProductRepository
-import com.example.shophai.utils.Response
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,7 +19,7 @@ class HomeViewModel @Inject constructor(
     private val _selected = MutableLiveData<ProductsItem>()
     val selected: LiveData<ProductsItem> = _selected
 
-    val products: LiveData<Response<Products>> = repository.products
+    val cached: LiveData<List<ProductsItem>> = repository.products
 
     init {
         getProducts()
@@ -36,9 +35,8 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun getCategoryProducts(category: String) {
-        viewModelScope.launch {
-            repository.getCategoryProducts(category)
-        }
-    }
+//    fun getProductsWithCategory(category: String) {
+//            cachcedProducts = cached.value!!
+//            _products.value = cachcedProducts.filter { it.category == category }
+//    }
 }

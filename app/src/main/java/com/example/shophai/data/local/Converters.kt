@@ -12,8 +12,8 @@ class Converters {
     @TypeConverter
     fun fromStringToRating(stringFromDb: String): Rating {
         val split = stringFromDb.split("::")
-        val count = split[0].toInt()
-        val rate = split[1].toDouble()
-        return Rating(count, rate)
+        val rate = split[0].toDouble()
+        val count = split[1].toInt()
+        return Rating(rate, count)
     }
 }

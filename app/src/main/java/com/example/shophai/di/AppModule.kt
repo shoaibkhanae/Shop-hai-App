@@ -48,4 +48,7 @@ object AppModule {
     @Provides
     @Singleton
     fun providesApiService(retrofit: Retrofit): ShopApiService = retrofit.create(ShopApiService::class.java)
+
+    @Provides
+    fun providesContext(@ApplicationContext context: Context): Context = context
 }
