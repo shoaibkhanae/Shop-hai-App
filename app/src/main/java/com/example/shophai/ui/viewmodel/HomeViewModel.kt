@@ -3,7 +3,6 @@ package com.example.shophai.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.shophai.data.model.ProductsItem
 import com.example.shophai.data.repository.ProductRepository
@@ -29,14 +28,9 @@ class HomeViewModel @Inject constructor(
         _selected.value = productsItem
     }
 
-   fun getProducts() {
+    fun getProducts() {
         viewModelScope.launch {
             repository.getProducts()
         }
     }
-
-//    fun getProductsWithCategory(category: String) {
-//            cachcedProducts = cached.value!!
-//            _products.value = cachcedProducts.filter { it.category == category }
-//    }
 }

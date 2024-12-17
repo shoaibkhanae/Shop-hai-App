@@ -1,6 +1,7 @@
 package com.example.shophai.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,7 +40,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun init() {
-//        getCategoryProduct()
+        getCategoryProduct()
 //        setupUIWithCategory()
         setupUI()
         binding.apply {
@@ -73,7 +74,8 @@ class HomeFragment : Fragment() {
 //    }
 
     private fun setupUI() {
-        shareViewModel.cached.observe(viewLifecycleOwner) {
+        shareViewModel.products.observe(viewLifecycleOwner) {
+            Log.d("response", "${it.size}")
             setupAdapter(it)
         }
     }
@@ -115,23 +117,23 @@ class HomeFragment : Fragment() {
         findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
     }
 
-//    private fun getCategoryProduct() {
-//        binding.allChip.setOnClickListener {
-//            shareViewModel.getProducts()
-//        }
-//        binding.electronics.setOnClickListener {
-//            shareViewModel.getProductsWithCategory("electronics")
-//        }
-//        binding.jewelery.setOnClickListener {
-//            shareViewModel.getProductsWithCategory("jewelery")
-//        }
-//        binding.mensClothing.setOnClickListener {
-//            shareViewModel.getProductsWithCategory("men's clothing")
-//        }
-//        binding.womensClothing.setOnClickListener {
-//            shareViewModel.getProductsWithCategory("women's clothing")
-//        }
-//    }
+    private fun getCategoryProduct() {
+        binding.allChip.setOnClickListener {
+            shareViewModel.getProducts()
+        }
+        binding.electronics.setOnClickListener {
+            shareViewModel.getProductsWithCategory("electronics")
+        }
+        binding.jewelery.setOnClickListener {
+            shareViewModel.getProductsWithCategory("jewelery")
+        }
+        binding.mensClothing.setOnClickListener {
+            shareViewModel.getProductsWithCategory("men's clothing")
+        }
+        binding.womensClothing.setOnClickListener {
+            shareViewModel.getProductsWithCategory("women's clothing")
+        }
+    }
 
 
     override fun onDestroyView() {

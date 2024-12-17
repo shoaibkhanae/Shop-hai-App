@@ -5,12 +5,11 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.util.Log
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
 import com.example.shophai.data.api.ShopApiService
 import com.example.shophai.data.local.ProductDao
 import com.example.shophai.data.model.ProductsItem
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.filter
 import javax.inject.Inject
 
 class ProductRepository @Inject constructor(
@@ -36,10 +35,6 @@ class ProductRepository @Inject constructor(
         }
     }
 
-    fun getProductsWithCategory(category: String) {
-        
-    }
-
 
 
 //    suspend fun getCategoryProducts(category: String) {
@@ -54,7 +49,7 @@ class ProductRepository @Inject constructor(
 //        }
 //    }
 
-    fun isOnline(context: Context): Boolean {
+    private fun isOnline(context: Context): Boolean {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val network = connectivityManager.activeNetwork ?: return false
         val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
